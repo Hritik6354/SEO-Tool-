@@ -642,24 +642,7 @@ def my_account(request):
     
    # return render(request, 'forgotpassword.html')
             
-            
-#def generate_project_pdf(request, project_id):
- #   project = get_object_or_404(add, id=project_id, user=request.user)
-  #  crawl_results = project.crawl_results.all()
-#
- #   template = get_template('pdf/report.html')
-  #  context = {
-   #     'project': project,
-    #    'crawl_results': crawl_results,
-     #   'user': request.user,
- #   }
-#
-  #  html_string = template.render(context)
-   # pdf_file = HTML(string=html_string).write_pdf()
-#
- #   response = HttpResponse(pdf_file, content_type='application/pdf')
-  #  response['Content-Disposition'] = f'attachment; filename="{project.title}_report.pdf"'
-   # return response
+
    
    
 @login_required
