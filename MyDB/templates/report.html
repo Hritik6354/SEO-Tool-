@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ add.title }} - SEO Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 13px; margin: 30px; }
+        h2, h4 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h2>SEO Crawl Report for {{ add.title }}</h2>
+    <p><strong>Project URL:</strong> {{ add.url }}</p>
+    <p><strong>User:</strong> {{ user.username }}</p>
+    <p><strong>Total Pages Crawled:</strong> {{ crawl_results|length }}</p>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Page URL</th>
+                <th>Title</th>
+                <th>H1 Tag</th>
+                <th>Meta Description</th>
+                <th>Internal Links</th>
+                <th>External Links</th>
+                <th>Broken Links</th>
+                <th>Keyword Density (%)</th>
+                <th>Crawl Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in crawl_results %}
+            <tr>
+                <td>{{ result.page_url }}</td>
+                <td>{{ result.title_tag }}</td>
+                <td>{{ result.h1_tag }}</td>
+                <td>{{ result.meta_description|truncatechars:50 }}</td>
+                <td>{{ result.internal_links }}</td>
+                <td>{{ result.external_links }}</td>
+                <td>{{ result.broken_links }}</td>
+                <td>{{ result.keyword_density }}</td>
+                <td>{{ result.crawl_timestamp|date:"Y-m-d H:i" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

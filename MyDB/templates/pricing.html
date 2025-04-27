@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        /* Pricing Cards */
+        .pricing-card {
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #f1f1f1;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        /* Table */
+        .table {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Buttons */
+        .btn-outline-primary {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-bottom: 0px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+    
+        .social-links {
+            margin-top: 0.5rem;
+        }
+    
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+    {% include 'navbar.html' %}
+    <!-- Pricing Section -->
+    <section class="container my-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-header">Free</div>
+                    <div class="card-body">
+                        <h2 class="price">₹0 <small>/mo</small></h2>
+                        <p>10 users included</p>
+                        <p>2 GB of storage</p>
+                        <p>Email support</p>
+                        <p>Help center access</p>
+                        <a href="{% url 'register' %}" class="btn btn-outline-primary">Sign up for free</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-header">Pro</div>
+                    <div class="card-body">
+                        <h2 class="price">₹1000 <small>/mo</small></h2>
+                        <p>20 users included</p>
+                        <p>10 GB of storage</p>
+                        <p>Priority email support</p>
+                        <p>Help center access</p>
+                        <a href="#" class="btn btn-outline-primary">Get started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card pricing-card">
+                    <div class="card-header">Enterprise</div>
+                    <div class="card-body">
+                        <h2 class="price">₹2900 <small>/mo</small></h2>
+                        <p>30 users included</p>
+                        <p>15 GB of storage</p>
+                        <p>Phone and email support</p>
+                        <p>Help center access</p>
+                        <a href="#" class="btn btn-outline-primary">Contact us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="container my-5">
+        <h2 class="text-center">Compare plans</h2>
+        <table class="table table-striped text-center mt-3">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Free</th>
+                    <th>Pro</th>
+                    <th>Enterprise</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Public</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>Private</td>
+                    <td></td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>Permissions</td>
+                    <td></td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>Sharing</td>
+                    <td></td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+          <!-- Footer Section -->
+          <div class="footer">
+            <p>&copy; 2024 SEO Tool. All rights reserved.</p>
+            <p>
+                Contact us:
+                <a href="hritik6354@gmail.com.com">hritik6354@gmail.com</a>
+            </p>
+            <div class="social-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Gmail</a> |
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+
+
+    {% endblock %}
+</body>
+</html>

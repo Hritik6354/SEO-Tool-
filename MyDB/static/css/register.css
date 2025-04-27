@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #5e617e; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    background-position: center;
+}
+
+.container {
+    width: 420px;
+    background: #afb1c2;
+    border: 2px solid rgba(5, 2, 2, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(193, 114, 114, 0.2);
+    color: #30351a;
+    border-radius: 5px;
+    padding: 20px 30px;
+    width: 420px;
+    background: #a5a6af;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.registration-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"], 
+input[type="email"], 
+input[type="password"] {
+    width: 50%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(18, 43, 22, 0.2);
+    border-radius: 40px;
+    text-align: center;
+}
+
+.input-box input::label {
+    color: #625454;
+    text-size-adjust: 50px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.container .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin-top: 20px 0 15px;
+}
+
+.register-link a {
+    color: #2339e0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SEO Crawl Results</title>
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   
+</head>
+<body>
+    
+    {% block content %}
+    {% include 'index.html' %}
+    <div class="container">
+        <h1>Crawl Results for {{ data.url }}</h1>
+        <p><strong>Title:</strong> {{ data.title }}</p>
+        <p><strong>Meta Description:</strong> {{ data.meta_description }}</p>
+        <p><strong>H1 Tags:</strong> {{ data.h1_tags }}</p>
+        <p><strong>Keyword Density:</strong> {{ data.keyword_density }}</p>
+        <p><strong>Page Speed Score:</strong> {{ data.page_speed }}</p>
+        <p><strong>Broken Links:</strong> {{ data.broken_links }}</p>
+        <a href="{% url 'crawl' %}" class="btn btn-secondary mt-3">Crawl Another</a>
+    </div>
+    {% endblock %}
+</body>
+</html>

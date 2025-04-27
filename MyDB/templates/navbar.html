@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Tool - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+                /* General Reset */
+        body, h1, h2, h3, p, ul, li, a, button {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #222;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            padding: 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Active Link Styling */
+        .navbar .nav-links a.active,
+        .navbar .nav-links a:hover {
+            color: #4dafff;
+            border-bottom: 2px solid #4dafff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #0073ff;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Button Styling */
+        .hero .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #0073ff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .hero .btn:hover {
+            background-color: #ddd;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 345px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'seohome' %}">SEO Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'seohome' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'planpricing' %}">Plans & Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll(".nav-links a");
+            navLinks.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

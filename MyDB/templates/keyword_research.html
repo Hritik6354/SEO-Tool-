@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Research</title>
+</head>
+<body>
+    {% block content %}
+    {% include 'index.html' %}
+    <h1>Keyword Research for {{ add.url }}</h1>
+    <table border="1">
+        <tr>
+            <th>Keyword</th>
+            <th>Search Volume</th>
+            <th>Competition</th>
+            <th>CPC</th>
+        </tr>
+        {% for keyword in keywords %}
+        <tr>
+            <td>{{ keyword.keyword }}</td>
+            <td>{{ keyword.search_volume }}</td>
+            <td>{{ keyword.competition }}</td>
+            <td>${{ keyword.cpc }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,55 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/register.css' %}" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sign Up</title>
+</head>
+<body>  
+        
+    <div class="container">
+    <h2>Registration Form</h2>
+    <form method="post" action="">
+        {% csrf_token %}<br>
+        {% if messages %}
+
+        {% for message in messages %}
+        <div class="alert alert-info">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="input-box">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+        </div>
+        <br>
+        <div class="input-box">
+        <label for="umobile">Mobile:</label>
+        <input type="tel" name="umobile" "oninput="if(this.value.length>10){this.value = this.value.slice(0,10);}" required>
+        </div>
+        <br>
+        <div class="input-box">
+        <label for="uemail">Email:</label>
+        <input type="email" name="uemail" required>
+        </div>
+        <br>
+        <div class="input-box">
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+        </div>
+        <br>
+        <button type="submit">Signup</button>
+        
+    </form>
+    <div class="register-link">
+        <p>I already have a membership?<a href="{% url 'login' %}" class="text-center">SignIn</a></p>
+    </div>
+    </div>
+    
+</body>
+</html>
+
+

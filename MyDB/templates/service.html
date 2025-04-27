@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Services</title>
+    <link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+        }
+        
+        .service-card h3 {
+            color: #007bff;
+        }
+
+        .service-card p {
+            color: #007bff;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 0.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+    </style>        
+</head>
+<body>
+    {% include 'index.html' %}
+    {% block content %}
+
+<div class="container">
+    <h1 class="text-center my-4">Our SEO Services</h1>
+    
+    <div class="row">
+        <!-- Keyword Research -->
+        <div class="col-md-4">
+            <div class="service-card">
+                <h3>🔍 Keyword Research</h3>
+                <p>Find high-performing keywords and analyze competitors to improve ranking.</p>
+            </div>
+        </div>
+
+        <!-- On-Page SEO -->
+        <div class="col-md-4">
+            <div class="service-card">
+                <h3>📄 On-Page SEO</h3>
+                <p>Optimize meta tags, images, and content structure for better rankings.</p>
+            </div>
+        </div>
+
+        <!-- Technical SEO -->
+        <div class="col-md-4">
+            <div class="service-card">
+                <h3>⚙️ Technical SEO</h3>
+                <p>Fix site errors, improve page speed, and ensure mobile-friendliness.</p>
+            </div>
+        </div>
+        <!-- Backlink Analysis -->
+        <div class="col-md-4">
+            <div class="service-card">
+                <h3>🔗 Backlink Analysis</h3>
+                <p>Monitor backlinks, analyze competitors, and remove toxic links.</p>
+            </div>
+        </div>
+
+        <!-- Rank Tracking -->
+        <div class="col-md-4">
+            <div class="service-card">
+                <h3>📈 Rank Tracking</h3>
+                <p>Monitor keyword rankings and generate SEO performance reports.</p>
+            </div>
+        </div>
+
+        <!-- Local SEO -->
+        <div class="col-md-4">
+            <div class="service-card">
+                <h3>📍 Local SEO</h3>
+                <p>Optimize Google My Business, citations, and NAP consistency.</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<!-- Footer Section -->
+<div class="footer">
+    <p>&copy; 2024 SEO Tool. All rights reserved.</p>
+    <p>
+        Contact us:
+        <a href="hritik6354@gmail.com.com">hritik6354@gmail.com</a>
+    </p>
+    <div class="social-links">
+        <a href="#">Facebook</a> |
+        <a href="#">Gmail</a> |
+        <a href="#">Instagram</a>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

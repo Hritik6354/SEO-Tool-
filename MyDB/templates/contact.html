@@ -1,0 +1,124 @@
+
+{% load static %}
+
+
+    <!-- <link rel="stylesheet" href="{% static 'css/attendance_request.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+    <style>
+        
+
+        .jumbotron {
+            background-color:rgb(39, 41, 44);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .jumbotron h1 {
+            font-size: 2.5rem;
+        }
+
+        .jumbotron p {
+            font-size: 1.2rem;
+        }
+
+        .contact-container {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            margin: 1rem 0;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 50%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color:rgb(145, 130, 85);
+            color: black;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 0.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+    </style>
+
+
+{% block content %}
+{% include 'index.html' %}
+    <div class="main1">
+    
+        <!-- Hero Section -->
+        <section class="jumbotron">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We would love to hear from you!</p>
+            </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section class="contact-container">
+            <h2>Get in Touch</h2>
+            <form action="mailto:hritik6327@gmail.com.com" method="POST" enctype="text/plain" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required />
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    
+
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>&copy; 2024 SEO Tool. All rights reserved.</p>
+            <p>
+                Contact us:
+                <a href="hritik6354@gmail.com.com">hritik6354@gmail.com</a>
+            </p>
+            <div class="social-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Gmail</a> |
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

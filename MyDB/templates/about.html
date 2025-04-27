@@ -1,0 +1,125 @@
+{% load static %}
+<title>AboutUs</title>
+{% block extra_css %}
+    <!-- <link rel="stylesheet" href="{% static 'css/attendance_request.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+    <style>
+
+        .jumbotron {
+            background-color:rgb(41, 45, 49);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .jumbotron h1 {
+            font-size: 2.5rem;
+        }
+
+        .about-container {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .about-container h2 {
+            margin: 1rem 0;
+            font-size: 2rem;
+        }
+
+        .about-container p{
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 0.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+    </style>
+{% endblock %}
+
+
+
+{% block content %}
+{% include 'index.html' %}
+    <div class="main1">
+    
+        <!-- Hero Section -->
+        <section class="jumbotron">
+            <div class="container">
+                <h1>About Us</h1>
+                <p>Learn more about Search Engine Optimization and our mission.</p>
+            </div>
+        </section>
+    
+        <!-- About Section -->
+        <section class="about-container">
+            <h2>Who We Are</h2>
+            <p style="color:black;">
+                An SEO (Search Engine Optimization) tool is a software application 
+                designed to help website owners,digital marketers, and SEO professionals 
+                improve their website’s visibility on search engines like Google,
+                Bing, and Yahoo. These tools analyze various aspects of a website, 
+                including keyword rankings, backlinks,technical issues, and competitor 
+                performance, to optimize it for higher search rankings and better organic traffic.
+            </p>
+            <p style="color:black;">
+                With a team of skilled professionals, we aim to make your life easier by
+                providing quick and efficient solutions for all your service needs.
+                Whether you need a quick repair or a complete installation, SkillServ
+                has got you covered.
+            </p>
+    
+            <h2>Our Vision</h2>
+            <p style="color:black;">
+                Our vision is to empower businesses, digital marketers, and website owners with a powerful, 
+                AI-driven SEO tool that simplifies search engine optimization. We aim to make SEO accessible, 
+                data-driven, and effective, enabling users to achieve higher rankings, increased traffic, and 
+                sustainable growth in the digital landscape. To become a trusted SEO solution that helps businesses and individuals dominate search engines, 
+                grow their online presence, and achieve long-term success in digital marketing.
+            </p>
+    
+            <h2>Our Values</h2>
+            <p style="color:black;">
+                Simplicity & User-Friendliness, Data-Driven Insights, Our tool will provide users with real-time data, 
+                competitor analysis, and automated recommendations to improve their SEO strategy. To provide real-time updates,
+                keyword tracking, and smart recommendations for better decision-making. Our commitment goes beyond just providing
+                a tool—we will offer educational resources, SEO tips, and dedicated customer support to ensure users maximize their SEO potential.
+
+            </p>
+        </section>
+    
+        <!-- Footer Section -->
+      
+        
+        <div class="footer">
+            <p>&copy; 2025 SEO Tool. All rights reserved.</p>
+            <p>
+                Contact us:
+                <a href="hritik6354@gmail.com.com">hritik6354@gmail.com</a>
+            </p>
+            <div class="social-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Gmail</a> |
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

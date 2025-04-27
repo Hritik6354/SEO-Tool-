@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SEO Analytics</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            bottom: 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 0.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    
+    {% block content %}
+    {% include 'index.html' %}
+    <a href="{% url 'crawl' %}" class="btn btn-danger mt-4"> Crawl</a>
+    
+    <div  style="color:black;" class="container">
+        <h1>SEO Analytics Report</h1>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>Meta Description</th>
+                    <th>Broken Links</th>
+                    <th>Crawled At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td><a href="{{ item.url }}" target="_blank">{{ item.url }}</a></td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.meta_description }}</td>
+                    <td>{{ item.broken_links|length }}</td>
+                    <td>{{ item.crawled_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="text-center mt-4">
+    <br><a href="{% url 'dashboard' %}"  class="btn btn-secondary mt-3"><strong>Back To HomePage</strong></a>
+    </div>
+    <br>
+     <!-- Footer Section -->
+     <div class="footer">
+        <p>&copy; 2024 SEO Tool. All rights reserved.</p>
+        <p>
+            Contact us:
+            <a href="hritik6354@gmail.com.com">hritik6354@gmail.com</a>
+        </p>
+        <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Gmail</a> |
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

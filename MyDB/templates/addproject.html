@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Project</title>
+    <link rel="stylesheet" href="{% static 'css/addproject.css' %}">
+<style>
+    .footer {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .social-links {
+        margin-top: 0.5rem;
+    }
+
+    .social-links a {
+        color: white;
+        margin: 0 0.5rem;
+    }
+</style>
+</head>
+<body>
+    
+    {% block content %}
+    {% include 'index.html' %}
+    <div class="form-container">
+        <h1>Add Your Project</h1>
+        <form method="POST" action="{% url 'addrecord' %}">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="url">Enter Website URL:</label>
+                <input type="url" id="url" name="url" required>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <br>
+    <div class="text-center mt-4">
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary"><strong>Back To Dashboard Page</strong></a>
+    </div>
+    <br>
+      <!-- Footer Section -->
+        <div class="footer">
+            <p>&copy; 2024 SEO Tool. All rights reserved.</p>
+            <p>
+                Contact us:
+                <a href="hritik6354@gmail.com.com">hritik6354@gmail.com</a>
+            </p>
+            <div class="social-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Gmail</a> |
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

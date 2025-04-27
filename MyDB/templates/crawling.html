@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SEO Crawler</title>
+</head>
+<body>
+    
+    {% block content %}
+    {% include 'index.html' %}
+    <h1>SEO Crawler</h1>
+    <form method="POST" action="{% url 'crawl' %}">
+        {% csrf_token %}
+        <input type="text" name="url" placeholder="Enter website URL" required>
+        <button type="submit">Crawl</button>
+    </form>
+
+    {% if result %}
+        <h2>Results for {{ result.title }}</h2>
+        <p><strong>Meta Description:</strong> {{ result.meta_description }}</p>
+
+        <h3>Headings:</h3>
+        {% for key, values in result.headings.items %}
+            <strong>{{ key }}:</strong>
+            <ul>
+                {% for heading in values %}
+                    <li>{{ heading }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+
+        <h3>Links:</h3>
+        <ul>
+            {% for link in result.links %}
+                <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <br><a href="{% url 'analytics' %}"  class="btn btn-secondary mt-3"><strong>Back To HomePage</strong></a>
+    {% endblock %}
+</body>
+</html>
